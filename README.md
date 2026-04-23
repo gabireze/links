@@ -1,130 +1,73 @@
-# Gabriel de Rezende Gonçalves - Links Hub
+# Gabriel de Rezende Goncalves - Links Hub
 
-[![Website](https://img.shields.io/badge/Website-gabireze.com.br-blue?style=flat-square&logo=safari)](https://gabireze.com.br)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-gabireze-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/gabireze)
-[![GitHub](https://img.shields.io/badge/GitHub-gabireze-181717?style=flat-square&logo=github)](https://github.com/gabireze)
+Agregador de links estatico, responsivo e bilingue, com troca automatica entre portugues e ingles.
 
-> Personal links hub built with LittleLink - A lightweight, performant alternative to LinkTree
+## O projeto
 
-## About This Project
+Este repositorio hospeda uma pagina unica de links pessoais, com layout mobile-first, tema escuro e deteccao automatica de idioma.
 
-This is my personal links hub, built using [LittleLink](https://github.com/sethcottle/littlelink) - a self-hosted alternative to services like LinkTree. It provides a clean, fast-loading page with all my important professional and social links in one place.
+O foco atual e:
 
-### Live Site
-**🌐 Visit:** [gabireze.com.br/links](https://gabireze.com.br/links)
+- organizar links principais em uma interface simples e direta;
+- manter a pagina extremamente simples de publicar;
+- preservar boa performance sem build tool nem framework;
+- facilitar iteracoes de conteudo e interface.
 
-## About Me
+## Stack
 
-**Gabriel de Rezende Gonçalves**  
-Software Engineer specialized in Vue.js, React, Laravel & Python  
-Currently working at [Levva](https://levva.com.br/) as Software Engineer  
-MBA in Solutions Architecture at FIAP
+- HTML5 para estrutura, metadados e logica de idioma
+- CSS3 para layout, tema e componentes
+- `normalize.css` para reset leve
+- `docs/css/custom.css` como unica camada visual da pagina
 
-### Professional Links
-- **Portfolio & CV:** [gabireze.com.br](https://gabireze.com.br)
-- **LinkedIn:** [linkedin.com/in/gabireze](https://linkedin.com/in/gabireze)
-- **GitHub:** [github.com/gabireze](https://github.com/gabireze)
-- **Email:** [contato@gabireze.com.br](mailto:contato@gabireze.com.br)
+## Estrutura
 
-## Technical Stack
+- `index.html`: pagina principal, conteudo, SEO, links e traducao PT/EN
+- `docs/css/custom.css`: tema, layout, componentes e ajustes responsivos
+- `docs/images/icons`: icones SVG efetivamente usados nos links
 
-This links page is built with:
-- **HTML5** - Semantic markup
-- **CSS3** - Responsive design with Skeleton framework
-- **JavaScript** - Performance optimizations
-- **LittleLink** - Base framework for branded buttons
+## Desenvolvimento local
 
-### Features
-- **Lightweight & Fast** - Minimal dependencies for quick loading
-- **Responsive Design** - Works perfectly on all devices
-- **SEO Optimized** - Meta tags, Open Graph, Schema.org
-- **Performance Focused** - 99/100 Google Lighthouse score
-- **Accessible** - ARIA labels and semantic HTML
-- **Analytics Ready** - Google Analytics 4 integration
-
-## Performance
-
-This page achieves excellent performance metrics:
-- **Lighthouse Score:** 99/100
-- **Load Time:** < 1 second
-- **First Contentful Paint:** < 0.5 seconds
-- **Cumulative Layout Shift:** 0
-
-## Deployment
-
-This site is designed to be deployed anywhere static hosting is available:
-- **GitHub Pages**
-- **Netlify**
-- **Vercel** 
-- **AWS Amplify**
-- **Firebase Hosting**
-
-### Quick Deploy
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gabireze/links)
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gabireze/links)
-
-## Local Development
+Nao existe processo de build.
 
 ```bash
-# Clone the repository
 git clone https://github.com/gabireze/links.git
 cd links
-
-# Open in browser (no build process required)
-open index.html
-# or serve with any static server
 python -m http.server 8000
 ```
 
-## Customization
+Depois, abra `http://localhost:8000`.
 
-To customize this for your own use:
+Tambem funciona abrindo `index.html` diretamente no navegador, mas um servidor local ajuda a validar carregamento de assets e comportamento mais proximo da publicacao real.
 
-1. **Update `index.html`:**
-   - Change personal information
-   - Update social media links
-   - Modify profile image URL
-   - Update meta tags
+## Publicacao
 
-2. **Styling:**
-   - Edit `docs/css/skeleton-auto.css` for theme colors
-   - Modify button styles in `docs/css/brands.css`
-   - Add custom CSS for additional styling
+Por ser um site estatico, pode ser publicado em qualquer host simples:
 
-3. **Analytics:**
-   - Replace Google Analytics ID with your own
-   - Add other tracking scripts if needed
+- GitHub Pages
+- Netlify
+- Vercel
+- AWS Amplify
+- Firebase Hosting
 
-## Why LittleLink?
+## Personalizacao
 
-- **Self-hosted:** Own your data and links
-- **Fast Loading:** No bloated frameworks
-- **Customizable:** Easy to modify and brand
-- **Privacy Focused:** No tracking by third parties
-- **Cost Effective:** Free to host anywhere
-- **Developer Friendly:** Simple HTML/CSS/JS
+Os ajustes mais comuns ficam nestes pontos:
 
-## Credits
+1. `index.html`
+   Atualize bio, links, textos da hero, metatags e dados estruturados.
+2. `docs/css/custom.css`
+   Ajuste paleta, composicao, hierarquia visual e componentes.
+3. `index.html`
+   Ajuste os textos do objeto de traducao e os links por idioma.
 
-- **Base Framework:** [LittleLink](https://github.com/sethcottle/littlelink) by [@sethcottle](https://github.com/sethcottle)
-- **CSS Framework:** [Skeleton](http://getskeleton.com/)
-- **Icons:** Custom SVG icons included with LittleLink
+## Melhorias futuras recomendadas
 
-## License
+- versionar localmente avatar, preview social e favicons;
+- revisar a necessidade do Google Analytics ou trocar por uma alternativa mais leve;
+- adicionar uma pequena rotina de auditoria com Lighthouse ou axe para validar acessibilidade e performance;
+- considerar uma estrategia de geolocalizacao por edge/CDN se a selecao automatica de idioma precisar ser baseada em pais real, e nao em idioma/timezone do navegador.
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+## Licenca
 
-## Contact
-
-Gabriel de Rezende Gonçalves
-- **Website:** [gabireze.com.br](https://gabireze.com.br)
-- **Email:** [contato@gabireze.com.br](mailto:contato@gabireze.com.br)
-- **LinkedIn:** [linkedin.com/in/gabireze](https://linkedin.com/in/gabireze)
-
----
-
-<div align="center">
-
-**Made with ❤️ using LittleLink**
-
-</div>
+Este projeto continua sob a licenca MIT. Veja [LICENSE.md](LICENSE.md).

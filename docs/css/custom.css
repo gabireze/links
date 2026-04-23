@@ -1,0 +1,231 @@
+:root {
+  --page-bg: hsl(250, 12%, 6%);
+  --text-primary: hsl(250, 12%, 90%);
+  --text-secondary: hsl(250, 12%, 82%);
+  --surface: hsl(250, 12%, 12%);
+  --surface-hover: hsl(250, 12%, 18%);
+  --surface-border: hsl(250, 12%, 30%);
+  --accent: #8f7cff;
+  --accent-hover: #a596ff;
+  --icon-secondary: #66f859;
+  --focus-ring: #5cf5db;
+  --button-primary-text: #18161f;
+  --button-muted-text: hsl(250, 12%, 90%);
+  --shadow-soft: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-primary);
+  background: var(--page-bg);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+p {
+  margin-top: 0;
+}
+
+.linktree-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(115, 89, 248, 0.4), 0 0 0 4px var(--page-bg);
+}
+
+.profile-card h1 {
+  margin-bottom: -0.1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.profile-subtitle {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-bio {
+  max-width: 360px;
+  margin: 0.55rem auto 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.links-stack {
+  display: grid;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.links-stack-primary {
+  margin-top: 2rem;
+}
+
+.links-stack-secondary {
+  margin-top: 0.75rem;
+}
+
+.button.button-linktree {
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  vertical-align: middle;
+  white-space: normal;
+  margin-bottom: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 0.75rem;
+  color: var(--button-muted-text);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  outline: none;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    box-shadow 140ms ease,
+    border-color 140ms ease;
+}
+
+.button.button-linktree:hover,
+.button.button-linktree:focus {
+  transform: scale(1.02);
+  color: var(--button-muted-text);
+  background: var(--surface-hover);
+  border-color: var(--icon-secondary);
+  box-shadow: none;
+}
+
+.button.button-linktree-primary {
+  color: var(--button-primary-text);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.button.button-linktree-primary:hover,
+.button.button-linktree-primary:focus {
+  color: var(--button-primary-text);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.button-linktree-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.button.button-linktree .icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  opacity: 0.95;
+}
+
+.linktree-copy {
+  display: block;
+  width: 100%;
+}
+
+.linktree-label {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.button.button-linktree:not(.button-linktree-primary) .icon {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(69%) saturate(560%)
+    hue-rotate(53deg) brightness(103%) contrast(95%);
+}
+
+.button.button-linktree:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .linktree-shell {
+    padding: 2.5rem 1rem;
+  }
+
+  .profile-card {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 640px) {
+  .linktree-shell {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .profile-card h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
